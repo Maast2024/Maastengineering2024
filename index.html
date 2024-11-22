@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maast Engineering Pte Ltd</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #cce7ff, #f5d6f4, #ffecb3, #f0f8ff); /* Light multi-color gradient background */
+            color: #333;
+            padding-bottom: 50px; /* To ensure footer is visible */
+        }
+
+        /* Navbar */
+        nav {
+            background-color: #1a3c6e; /* Dark Blue Background */
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header Section */
+        .header {
+            text-align: center;
+            background: linear-gradient(to right, #f0f8ff, #4ccdf6, #f0f8ff); /* Gradient Background */
+            padding: 20px;
+            border-bottom: 2px solid #1a3c6e; /* Blue Border */
+        }
+        .header h1 {
+            font-size: 46px;
+            margin: 0;
+        }
+        .header h1 span {
+            color: #e53935; /* Red for "MAAST" */
+        }
+        .header h1 .blue {
+            color: #1a3c6e; /* Dark Blue for "Engineering Pte Ltd" */
+        }
+        .header img {
+            max-width: 150px; /* Logo size */
+        }
+
+        .slogan {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #f64cbd; /* Golden color for the slogan */
+        }
+
+        /* Services Section */
+        .services {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center; /* Center the services section */
+            background: linear-gradient(to right, #f5d6f4, #cce7ff); /* Gradient Background */
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .services h2 {
+            font-size: 38px;
+            color: #1a3c6e;
+            margin-bottom: 20px;
+        }
+
+        /* Service Images Section (Slider) */
+        .service-slider {
+            position: relative;
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+            max-width: 100%; /* ensures it never overflows */
+        }
+        .slider-images {
+            display: flex;
+            transition: transform 1s ease-in-out;
+            width: 70%; /* Adjust the width to 3 times the width of a single image */
+        }
+        .slider-images img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .slider-button.prev {
+            left: 10px;
+        }
+
+        .slider-button.next {
+            right: 10px;
+        }
+
+        /* Service List Styling */
+        .services ul {
+            list-style-type: disc;
+            padding-left: 40px; /* Add padding to align bullets correctly */
+            font-size: 18px;
+            color: #1a3c6e;
+            text-align: left; /* Align bullets to the left */
+            max-width: 600px; /* Limit width for better alignment */
+            margin-left: auto;
+            margin-right: auto; /* Center the list */
+        }
+
+        .services li {
+            margin-bottom: 10px;
+        }
+
+        /* About Us Section */
+        .about-us {
+            background: linear-gradient(to right, #f5d6f4, #cce7ff); /* Gradient Background */
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 2px solid #1a3c6e;
+        }
+        .about-us h2 {
+            font-size: 28px;
+            color: #1a3c6e;
+        }
+        .about-us p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+          /* Contact Us Section */
+        .contact-info {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #f5d6f4, #cce7ff); /* Gradient Background */
+            border-top: 2px solid #1a3c6e;
+        }
+        .contact-info h2 {
+            font-size: 28px;
+            color: #1a3c6e;
+        }
+        .contact-info p {
+            font-size: 18px;
+        }
+        .contact-info a {
+            color: #1a3c6e;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* Enquiry Form Section */
+        .enquiry-form {
+            background: linear-gradient(to right, #cce7ff, #f5d6f4); /* Gradient Background */
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+            border-top: 2px solid #1a3c6e;
+        }
+        .enquiry-form h2 {
+            font-size: 28px;
+            color: #1a3c6e;
+        }
+        .enquiry-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .enquiry-form input, .enquiry-form textarea {
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .enquiry-form button {
+            background-color: #1a3c6e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .enquiry-form button:hover {
+            background-color: #14568d;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            background-color: #1a3c6e; /* Dark Blue Background */
+            color: white;
+            padding: 10px;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div id="home" class="header">
+        <img src="images/maast.png" alt="Maast Engineering Logo">
+        <h1><span>MAAST</span> <span class="blue">Engineering Pte Ltd</span></h1>    
+        <marquee> <p class="slogan">"Where Air Meets Art, Comfort Starts"</p></marquee>
+    </div>
+
+    <!-- Navbar Section -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact Us</a>
+        <a href="#enquiry-form">Enquiry Form</a>
+    </nav>
+
+    <!-- Services Section -->
+    <div id="services" class="services">
+        <h2>Our Services</h2>
+
+        <!-- What We Offer Section (Image Slider) -->
+        <div id="what-we-offer">
+            <h3>What We Offer</h3>
+            <div class="service-slider">
+                <div class="slider-images">
+                    <img src="images/duct3.jpg" alt="Fibrous Plasterboard Ceiling">
+                    <img src="images/duct2.jpg" alt="ACMV System Specialist">
+                    <img src="images/duct1.jpg" alt="Air Flow Calibration">
+                </div>
+                <button class="slider-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="slider-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Services We Provide Section (Text List) -->
+        <div id="services-list">
+            <h3>Services We Provide</h3>
+            <ul>
+                <li>Fibrous Plasterboard Ceiling</li>
+                <li>ACMV System Specialist</li>
+                <li>Air Flow Calibration</li>
+                <li>M&E Management</li>
+                <li>Ceiling & Plastering Works</li>
+                <li>Painting & Partition Works</li>
+                <li>General Construction</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>Maast Engineering Pte Ltd specializes in providing high-quality ducting, air conditioning, and mechanical engineering services. We are committed to delivering precision ducting solutions for both residential and commercial spaces. Our goal is to connect spaces with the best possible air flow systems that meet the needs of our clients.</p>
+    </div>
+
+    <!-- Contact Us Section -->
+    <div id="contact-us" class="contact-info">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out to us:</p>
+        <p>Email: <a href="mailto:maasteng2016@gmail.com">maasteng2016@gmail.com</a></p>
+        <p>Phone: <a href="tel:+6588466529">+65 8846 6529</a></p>
+<p>UEN No: <span style="color: #0805a8;">202438073K</span></p> <!-- Dark Color UEN --> 
+
+        <p>Address: 403 Fajar Road, #04-257, Singapore (670403)</p>
+          </div>
+
+
+    <!-- Enquiry Form Section -->
+    <div id="enquiry-form" class="enquiry-form">
+        <h2>Enquiry Form</h2>
+        <form action="submit_form.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone Number" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Maast Engineering Pte Ltd | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+
+        function moveSlide(n) {
+            const slides = document.querySelectorAll('.slider-images img');
+            slideIndex += n;
+            if (slideIndex >= slides.length) slideIndex = 0;
+            if (slideIndex < 0) slideIndex = slides.length - 1;
+
+            const slider = document.querySelector('.slider-images');
+            slider.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+        }
+    </script>
+
+</body>
+</html>
