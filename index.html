@@ -26,8 +26,9 @@
             text-decoration: none;
             font-size: 18px;
         }
-        nav a:hover {
+        nav a:hover, nav a.active {
             text-decoration: underline;
+            color: #e53935; /* Red for active state */
         }
 
         /* Header Section */
@@ -77,7 +78,7 @@
         /* Service Images Section (Slider) */
         .service-slider {
             position: relative;
-            width: 50%;
+            width: 80%;
             margin: auto;
             overflow: hidden;
             max-width: 100%; /* ensures it never overflows */
@@ -85,10 +86,10 @@
         .slider-images {
             display: flex;
             transition: transform 1s ease-in-out;
-            width: 70%; /* Adjust the width to 3 times the width of a single image */
+            width: 300%; /* Adjust the width to 3 times the width of a single image */
         }
         .slider-images img {
-            width: 100%;
+            width: 33.33%; /* Adjust width to fit 3 images */
             height: auto;
             object-fit: cover;
             border-radius: 8px;
@@ -202,7 +203,7 @@
     <div id="home" class="header">
         <img src="maast.png" alt="Maast Engineering Logo">
         <h1><span>MAAST</span> <span class="blue">Engineering Pte Ltd</span></h1>    
-        <marquee> <p class="slogan">"Where Air Meets Art, Comfort Starts"</p></marquee>
+        <p class="slogan">"Where Air Meets Art, Comfort Starts"</p>
     </div>
 
     <!-- Navbar Section -->
@@ -259,35 +260,31 @@
         <p>If you have any questions or need assistance, feel free to reach out to us:</p>
         <p>Email: <a href="mailto:maasteng2016@gmail.com">maasteng2016@gmail.com</a></p>
         <p>Phone: <a href="tel:+6588466529">+65 8846 6529</a></p>
-<p>UEN No: <span style="color: #0805a8;">202438073K</span></p> <!-- Dark Color UEN --> 
-
+        <p>UEN No: <span style="color: #0805a8;">202438073K</span></p>
         <p>Address: 403 Fajar Road, #04-257, Singapore (670403)</p>
-          </div>
-
+    </div>
 
     <!-- Enquiry Form Section -->
     <div id="enquiry-form" class="enquiry-form">
         <h2>Enquiry Form</h2>
-        <!-- Google Form Embed Code -->
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpGR_ILlcIngtRK0-FvB0zd64igkjEDO78Y_H1Szz6Kt8C3w/viewform?usp=sf_link" target="_blank">
-    Fill out our enquiry form
-</a>
- </div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpGR_ILlcIngtRK0-FvB0zd64igkjEDO78Y_H1Szz6Kt8C3w/viewform?usp=sf_link" target="_blank">Fill out our enquiry form</a>
+    </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Maast Engineering Pte Ltd. All rights reserved.</p>
     </footer>
-<script>
-        let currentIndex = 0;
 
-        function moveSlide(direction) {
-            const images = document.querySelectorAll('.slider-images img');
-            const totalImages = images.length;
-            currentIndex = (currentIndex + direction + totalImages) % totalImages;
-            document.querySelector('.slider-images').style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-    </script>
+<script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+        const images = document.querySelectorAll('.slider-images img');
+        const totalImages = images.length;
+        currentIndex = (currentIndex + direction + totalImages) % totalImages;
+        document.querySelector('.slider-images').style.transform = `translateX(-${currentIndex * 33.33}%)`;
+    }
+</script>
 
 </body>
 </html>
