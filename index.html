@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +21,16 @@
             padding: 15px;
             text-align: center;
         }
+
         nav a {
             color: white;
             margin: 0 20px;
             text-decoration: none;
             font-size: 18px;
         }
-        nav a:hover, nav a.active {
+
+        nav a:hover {
             text-decoration: underline;
-            color: #e53935; /* Red for active state */
         }
 
         /* Header Section */
@@ -38,16 +40,20 @@
             padding: 20px;
             border-bottom: 2px solid #1a3c6e; /* Blue Border */
         }
+
         .header h1 {
             font-size: 46px;
             margin: 0;
         }
+
         .header h1 span {
             color: #e53935; /* Red for "MAAST" */
         }
+
         .header h1 .blue {
             color: #1a3c6e; /* Dark Blue for "Engineering Pte Ltd" */
         }
+
         .header img {
             max-width: 150px; /* Logo size */
         }
@@ -69,6 +75,7 @@
             margin-left: auto;
             margin-right: auto;
         }
+
         .services h2 {
             font-size: 38px;
             color: #1a3c6e;
@@ -78,18 +85,20 @@
         /* Service Images Section (Slider) */
         .service-slider {
             position: relative;
-            width: 80%;
+            width: 50%;
             margin: auto;
             overflow: hidden;
             max-width: 100%; /* ensures it never overflows */
         }
+
         .slider-images {
             display: flex;
             transition: transform 1s ease-in-out;
-            width: 300%; /* Adjust the width to 3 times the width of a single image */
+            width: 70%; /* Adjust the width to 3 times the width of a single image */
         }
+
         .slider-images img {
-            width: 33.33%; /* Adjust width to fit 3 images */
+            width: 100%;
             height: auto;
             object-fit: cover;
             border-radius: 8px;
@@ -138,10 +147,12 @@
             text-align: center;
             border-top: 2px solid #1a3c6e;
         }
+
         .about-us h2 {
             font-size: 28px;
             color: #1a3c6e;
         }
+
         .about-us p {
             font-size: 18px;
             line-height: 1.6;
@@ -155,17 +166,21 @@
             background: linear-gradient(to right, #f5d6f4, #cce7ff); /* Gradient Background */
             border-top: 2px solid #1a3c6e;
         }
+
         .contact-info h2 {
             font-size: 28px;
             color: #1a3c6e;
         }
+
         .contact-info p {
             font-size: 18px;
         }
+
         .contact-info a {
             color: #1a3c6e;
             text-decoration: none;
         }
+
         .contact-info a:hover {
             text-decoration: underline;
         }
@@ -178,6 +193,7 @@
             text-align: center;
             border-top: 2px solid #1a3c6e;
         }
+
         .enquiry-form h2 {
             font-size: 28px;
             color: #1a3c6e;
@@ -191,19 +207,23 @@
             padding: 10px;
             margin-top: 40px;
         }
+
         footer p {
             margin: 0;
             font-size: 16px;
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header Section -->
     <div id="home" class="header">
         <img src="maast.png" alt="Maast Engineering Logo">
-        <h1><span>MAAST</span> <span class="blue">Engineering Pte Ltd</span></h1>    
-        <p class="slogan">"Where Air Meets Art, Comfort Starts"</p>
+        <h1><span>MAAST</span> <span class="blue">Engineering Pte Ltd</span></h1>
+        <marquee>
+            <p class="slogan">"Where Air Meets Art, Comfort Starts"</p>
+        </marquee>
     </div>
 
     <!-- Navbar Section -->
@@ -260,14 +280,16 @@
         <p>If you have any questions or need assistance, feel free to reach out to us:</p>
         <p>Email: <a href="mailto:maasteng2016@gmail.com">maasteng2016@gmail.com</a></p>
         <p>Phone: <a href="tel:+6588466529">+65 8846 6529</a></p>
-        <p>UEN No: <span style="color: #0805a8;">202438073K</span></p>
+        <p>UEN No: <span style="color: #0805a8;">202438073K</span></p> <!-- Dark Color UEN -->
         <p>Address: 403 Fajar Road, #04-257, Singapore (670403)</p>
     </div>
 
     <!-- Enquiry Form Section -->
     <div id="enquiry-form" class="enquiry-form">
         <h2>Enquiry Form</h2>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpGR_ILlcIngtRK0-FvB0zd64igkjEDO78Y_H1Szz6Kt8C3w/viewform?usp=sf_link" target="_blank">Fill out our enquiry form</a>
+        <!-- Google Form Embed Code -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpGR_ILlcIngtRK0-FvB0zd64igkjEDO78Y_H1Szz6Kt8C3w/viewform?usp=sf_link"
+                width="640" height="480" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
 
     <!-- Footer Section -->
@@ -275,16 +297,17 @@
         <p>&copy; 2024 Maast Engineering Pte Ltd. All rights reserved.</p>
     </footer>
 
-<script>
-    let currentIndex = 0;
+    <script>
+        let currentIndex = 0;
 
-    function moveSlide(direction) {
-        const images = document.querySelectorAll('.slider-images img');
-        const totalImages = images.length;
-        currentIndex = (currentIndex + direction + totalImages) % totalImages;
-        document.querySelector('.slider-images').style.transform = `translateX(-${currentIndex * 33.33}%)`;
-    }
-</script>
+        function moveSlide(direction) {
+            const images = document.querySelectorAll('.slider-images img');
+            const totalImages = images.length;
+            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+            document.querySelector('.slider-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
 
 </body>
+
 </html>
