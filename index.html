@@ -146,7 +146,7 @@
             line-height: 1.6;
         }
 
-          /* Contact Us Section */
+        /* Contact Us Section */
         .contact-info {
             margin-top: 40px;
             text-align: center;
@@ -169,7 +169,6 @@
             text-decoration: underline;
         }
 
-
         /* Enquiry Form Section */
         .enquiry-form {
             background: linear-gradient(to right, #cce7ff, #f5d6f4); /* Gradient Background */
@@ -181,30 +180,6 @@
         .enquiry-form h2 {
             font-size: 28px;
             color: #1a3c6e;
-        }
-        .enquiry-form form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .enquiry-form input, .enquiry-form textarea {
-            margin: 10px;
-            padding: 10px;
-            width: 300px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .enquiry-form button {
-            background-color: #1a3c6e;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .enquiry-form button:hover {
-            background-color: #14568d;
         }
 
         /* Footer Section */
@@ -293,33 +268,17 @@
     <!-- Enquiry Form Section -->
     <div id="enquiry-form" class="enquiry-form">
         <h2>Enquiry Form</h2>
-        <form action="submit_form.php" method="post">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone Number" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
+        <!-- Google Form Embed Code -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfpGR_ILlcIngtRK0-FvB0zd64igkjEDO78Y_H1Szz6Kt8C3w/viewform?usp=sf_link"
+                width="640" height="800" frameborder="0" marginheight="0" marginwidth="0">
+            Loading…
+        </iframe>
     </div>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 Maast Engineering Pte Ltd | All Rights Reserved</p>
+        <p>&copy; 2024 Maast Engineering Pte Ltd. All rights reserved.</p>
     </footer>
-
-    <script>
-        let slideIndex = 0;
-
-        function moveSlide(n) {
-            const slides = document.querySelectorAll('.slider-images img');
-            slideIndex += n;
-            if (slideIndex >= slides.length) slideIndex = 0;
-            if (slideIndex < 0) slideIndex = slides.length - 1;
-
-            const slider = document.querySelector('.slider-images');
-            slider.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
-        }
-    </script>
 
 </body>
 </html>
