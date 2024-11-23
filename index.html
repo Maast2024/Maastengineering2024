@@ -276,6 +276,15 @@
     <footer>
         <p>&copy; 2024 Maast Engineering Pte Ltd. All rights reserved.</p>
     </footer>
+<script>
+        let currentIndex = 0;
 
+        function moveSlide(direction) {
+            const images = document.querySelectorAll('.slider-images img');
+            const totalImages = images.length;
+            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+            document.querySelector('.slider-images').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
 </body>
 </html>
